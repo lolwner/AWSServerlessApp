@@ -53,7 +53,7 @@ namespace AWSAPP.UI
             app.UseMvc();
             app.UseSpa(spa =>
             {
-                spa.Options.SourcePath = "/Prod/ClientApp";
+                spa.Options.SourcePath = "ClientApp";
 #if DEBUG
                 if (env.IsDevelopment())
                 {
