@@ -32,7 +32,7 @@ namespace AWSAPP.UI
             services.AddAWSService<Amazon.S3.IAmazonS3>();
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "ClientApp/dist";
+                configuration.RootPath = "Prod/ClientApp/dist";
             });
         }
 
