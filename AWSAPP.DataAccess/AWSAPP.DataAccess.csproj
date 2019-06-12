@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AWSAPP.Configuration\AWSAPP.Configuration.csproj" />
     <ProjectReference Include="..\AWSAPP.Entities\AWSAPP.Entities.csproj" />
   </ItemGroup>
 
