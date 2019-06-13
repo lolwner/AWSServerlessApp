@@ -1,5 +1,4 @@
-﻿using AWSAPP.Configurations;
-using AWSAPP.DataAccess.Repositories.Interfaces;
+﻿using AWSAPP.DataAccess.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -33,8 +32,16 @@ namespace AWSAPP.DataAccess.Repositories
         }
 
         public Task<TEntity> FindById(long id)
-        {
-            return _dbSet.FindAsync(id);
+        { 
+            try
+            {
+                return _dbSet.FindAsync(id);
+            }
+            catch
+            {
+                return null;
+            }
+            
         }
 
         public Task<List<TEntity>> Get()

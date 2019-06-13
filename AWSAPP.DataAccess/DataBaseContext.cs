@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AWSAPP.DataAccess
 {
-    public class AWSAPPDataBaseContext : DbContext
+    public class DataBaseContextConfiguration : DbContext
     {
-        public AWSAPPDataBaseContext(DbContextOptions<AWSAPPDataBaseContext> options) : base(options)
+        public DataBaseContextConfiguration(DbContextOptions<DataBaseContextConfiguration> options) : base(options)
         {
         }
 

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AWSAPP.DataAccess\AWSAPP.DataAccess.csproj" />
     <ProjectReference Include="..\AWSAPP.ViewModels\AWSAPP.ViewModels.csproj" />
   </ItemGroup>
 

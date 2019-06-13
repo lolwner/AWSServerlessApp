@@ -1,6 +1,8 @@
-﻿namespace AWSAPP.DataAccess.Repositories.Interfaces
+﻿using AWSAPP.Entities.Entities;
+
+namespace AWSAPP.DataAccess.Repositories.Interfaces
 {
-    public interface IAcquaintanceRepository
+    public interface IAcquaintanceRepository : IBaseRepository<Acquaintance>
     {
     }
 }

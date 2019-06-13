@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using AWSAPP.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace AWSAPP.WEB.Controllers
 {
@@ -11,9 +8,18 @@ namespace AWSAPP.WEB.Controllers
     [ApiController]
     public class AcquaintanceController : ControllerBase
     {
-        public string Get(int id)
+        private readonly IAcquaintanceService _acquaintanceService;
+
+        public AcquaintanceController(IAcquaintanceService acquaintanceService)
         {
-            return "value";
+            _acquaintanceService = acquaintanceService;
+        }
+
+        [HttpGet]
+        public async Task<string> GetAsync()
+        {
+            var testResult = await  _acquaintanceService.GetAcquaintanceAsync();
+            return testResult.Name;
         }
     }
 }

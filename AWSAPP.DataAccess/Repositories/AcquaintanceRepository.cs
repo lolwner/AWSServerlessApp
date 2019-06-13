@@ -1,5 +1,4 @@
-﻿using AWSAPP.Configurations;
-using AWSAPP.DataAccess.Repositories.Interfaces;
+﻿using AWSAPP.DataAccess.Repositories.Interfaces;
 using AWSAPP.Entities.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -14,10 +13,10 @@ namespace AWSAPP.DataAccess.Repositories
         {
         }
 
-        public async Task<List<Acquaintance>> GetAcquaintancesByClientId()
+        public async Task<List<Acquaintance>> GetAcquaintancesByClientId(long id)
         {
             List<Acquaintance> acquaintances = await _dbSet
-                .Where(ac => ac.ClientId == 10064)
+                .Where(ac => ac.ClientId == id)
                 .ToListAsync();
             return acquaintances;
         }

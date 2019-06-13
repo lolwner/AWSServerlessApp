@@ -1,15 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AWSAPP.Configurations;
+using AWSAPP.Configuration;
+using AWSAPP.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace AWSAPP.WEB
 {
@@ -31,8 +27,11 @@ namespace AWSAPP.WEB
 
             // Add S3 to the ASP.NET Core dependency injection framework.
             services.AddAWSService<Amazon.S3.IAmazonS3>();
+
             services.AddDbContext<DataBaseContextConfiguration>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.ServiceRegistration();
+            services.RepositoryRegistration();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
