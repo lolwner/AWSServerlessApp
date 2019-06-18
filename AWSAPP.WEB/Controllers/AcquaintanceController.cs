@@ -1,5 +1,7 @@
 ﻿using AWSAPP.Services.Services.Interfaces;
+using AWSAPP.ViewModels.AcquaintanceViews;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace AWSAPP.WEB.Controllers
@@ -16,10 +18,10 @@ namespace AWSAPP.WEB.Controllers
         }
 
         [HttpGet]
-        public async Task<string> GetAsync()
+        public async Task<AcquaintanceViewModel> GetAsync()
         {
             var testResult = await  _acquaintanceService.GetAcquaintanceAsync();
-            return testResult.Name;
+            return testResult;
         }
     }
 }

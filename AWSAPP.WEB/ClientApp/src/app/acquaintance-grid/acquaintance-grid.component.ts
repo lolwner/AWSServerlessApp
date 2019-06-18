@@ -18,7 +18,6 @@ export class AcquaintanceGridComponent implements OnInit {
       console.log(res);
     }
     );
-    console.log(res);
   }
 
 }
