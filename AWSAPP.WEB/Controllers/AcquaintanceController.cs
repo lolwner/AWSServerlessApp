@@ -1,12 +1,11 @@
-﻿using AWSAPP.Services.Services.Interfaces;
+﻿using AWSAPP.Configuration;
+using AWSAPP.Services.Services.Interfaces;
 using AWSAPP.ViewModels.AcquaintanceViews;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading.Tasks;
 
 namespace AWSAPP.WEB.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class AcquaintanceController : ControllerBase
     {
@@ -17,11 +16,17 @@ namespace AWSAPP.WEB.Controllers
             _acquaintanceService = acquaintanceService;
         }
 
-        [HttpGet]
+        [HttpGet("api/[controller]/GetAcquaintance")]
         public async Task<AcquaintanceViewModel> GetAsync()
         {
             var testResult = await  _acquaintanceService.GetAcquaintanceAsync();
             return testResult;
+        }
+
+        [HttpGet("api/GetEnvironment")]
+        public string GetEnvironment()
+        {
+            return EnvironmentalVariable.LambdaVariable;
         }
     }
 }
